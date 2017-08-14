@@ -14,7 +14,7 @@ namespace PatronEstrategia
             Console.WriteLine("Nadando");
         }
 
-        public void Volar()
+        public virtual void Volar()
         {
             Console.WriteLine("Volando");
         }
@@ -46,6 +46,11 @@ namespace PatronEstrategia
             Console.WriteLine("¡Meec, meec!");
         }
 
+
+        public override void Volar()
+        {
+            Console.WriteLine("No puedo volar :( ");
+        }
 
         public override void Mostrar()
         {
