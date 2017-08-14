@@ -11,14 +11,16 @@ namespace PatronEstrategia
             patoDomestico.Mostrar();
             patoDomestico.Graznar();
             patoDomestico.Nadar();
-          
+            patoDomestico.Volar();
+
 
             var patoPelirrojo = new PatoPelirrojo();
 
             patoPelirrojo.Mostrar();
             patoPelirrojo.Graznar();
             patoPelirrojo.Nadar();
-            
+            patoPelirrojo.Volar();
+
             Console.ReadLine();
         }
     }

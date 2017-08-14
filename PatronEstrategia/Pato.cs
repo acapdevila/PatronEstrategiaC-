@@ -14,6 +14,11 @@ namespace PatronEstrategia
             Console.WriteLine("Nadando");
         }
 
+        public void Volar()
+        {
+            Console.WriteLine("Volando");
+        }
+
 
         public abstract void Mostrar();
     }
@@ -30,7 +35,7 @@ namespace PatronEstrategia
     {
         public override void Mostrar()
         {
-            Console.WriteLine("Soy un pato doméstico");
+            Console.WriteLine("Soy un pato pelirrojo");
         }
     }
 }
