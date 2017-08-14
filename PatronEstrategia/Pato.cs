@@ -2,59 +2,97 @@
 
 namespace PatronEstrategia
 {
+    //public abstract class Pato
+    //{
+    //    public virtual void Graznar()
+    //    {
+    //        Console.WriteLine("¡Cuac, cuac!");
+    //    }
+
+    //    public void Nadar()
+    //    {
+    //        Console.WriteLine("Nadando");
+    //    }
+
+    //    public virtual void Volar()
+    //    {
+    //        Console.WriteLine("Volando");
+    //    }
+
+
+    //    public abstract void Mostrar();
+    //}
+
+
     public abstract class Pato
     {
-        public virtual void Graznar()
-        {
-            Console.WriteLine("¡Cuac, cuac!");
-        }
 
         public void Nadar()
         {
             Console.WriteLine("Nadando");
         }
 
-        public virtual void Volar()
-        {
-            Console.WriteLine("Volando");
-        }
-
+      
 
         public abstract void Mostrar();
     }
 
-    public class PatoDomestico : Pato
+
+    public class PatoDomestico : Pato, IVolar, IGraznar
     {
         public override void Mostrar()
         {
             Console.WriteLine("Soy un pato doméstico");
         }
+
+        public virtual void Graznar()
+        {
+            Console.WriteLine("¡Cuac, cuac!");
+        }
+        public virtual void Volar()
+        {
+            Console.WriteLine("Volando");
+        }
+
     }
 
-    public class PatoPelirrojo : Pato
+    public class PatoPelirrojo : Pato, IVolar, IGraznar
     {
         public override void Mostrar()
         {
             Console.WriteLine("Soy un pato pelirrojo");
         }
+
+        public virtual void Graznar()
+        {
+            Console.WriteLine("¡Cuac, cuac!");
+        }
+        public virtual void Volar()
+        {
+            Console.WriteLine("Volando");
+        }
+
     }
 
-    public class PatoDeJuguete : Pato
+    public class PatoDeJuguete : Pato, IGraznar
     {
-        public override void Graznar()
+        public void Graznar()
         {
             Console.WriteLine("¡Meec, meec!");
         }
 
 
-        public override void Volar()
-        {
-            Console.WriteLine("No puedo volar :( ");
-        }
-
         public override void Mostrar()
         {
             Console.WriteLine("Soy un pato de juguete");
+        }
+    }
+
+    public class PatoDecorativo : Pato
+    {
+        public override void Mostrar()
+        {
+            Console.WriteLine("Soy un pato decorativo");
         }
     }
 }
