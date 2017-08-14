@@ -4,7 +4,7 @@ namespace PatronEstrategia
 {
     public abstract class Pato
     {
-        public void Graznar()
+        public virtual void Graznar()
         {
             Console.WriteLine("¡Cuac, cuac!");
         }
@@ -36,6 +36,20 @@ namespace PatronEstrategia
         public override void Mostrar()
         {
             Console.WriteLine("Soy un pato pelirrojo");
+        }
+    }
+
+    public class PatoDeJuguete : Pato
+    {
+        public override void Graznar()
+        {
+            Console.WriteLine("¡Meec, meec!");
+        }
+
+
+        public override void Mostrar()
+        {
+            Console.WriteLine("Soy un pato de juguete");
         }
     }
 }

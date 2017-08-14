@@ -21,6 +21,15 @@ namespace PatronEstrategia
             patoPelirrojo.Nadar();
             patoPelirrojo.Volar();
 
+
+            var patoDeJuguete = new PatoDeJuguete();
+
+            patoDeJuguete.Mostrar();
+            patoDeJuguete.Graznar();
+            patoDeJuguete.Nadar();
+            patoDeJuguete.Volar();
+
+
             Console.ReadLine();
         }
     }
