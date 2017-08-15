@@ -2,83 +2,71 @@
 
 namespace PatronEstrategia
 {
-    //public abstract class Pato
-    //{
-    //    public virtual void Graznar()
-    //    {
-    //        Console.WriteLine("¡Cuac, cuac!");
-    //    }
-
-    //    public void Nadar()
-    //    {
-    //        Console.WriteLine("Nadando");
-    //    }
-
-    //    public virtual void Volar()
-    //    {
-    //        Console.WriteLine("Volando");
-    //    }
-
-
-    //    public abstract void Mostrar();
-    //}
-
-
     public abstract class Pato
     {
+        private readonly IGraznar _estrategiaGraznar;
+        private readonly IVolar _estrategiaVolar;
+
+        protected Pato(IGraznar estrategiaGraznar, IVolar estrategiaVolar)
+        {
+            _estrategiaGraznar = estrategiaGraznar;
+            _estrategiaVolar = estrategiaVolar;
+        }
+
+        public void Graznar()
+        {
+          _estrategiaGraznar.Graznar();
+        }
+
+        public void Volar()
+        {
+           _estrategiaVolar.Volar();
+        }
 
         public void Nadar()
         {
             Console.WriteLine("Nadando");
         }
 
-      
 
         public abstract void Mostrar();
     }
 
+    
 
-    public class PatoDomestico : Pato, IVolar, IGraznar
+    public class PatoDomestico : Pato
     {
+        public PatoDomestico() : 
+            base(new GraznarComoUnPato(), new VolarConAlas())
+        {
+        }
+
         public override void Mostrar()
         {
             Console.WriteLine("Soy un pato doméstico");
         }
-
-        public virtual void Graznar()
-        {
-            Console.WriteLine("¡Cuac, cuac!");
-        }
-        public virtual void Volar()
-        {
-            Console.WriteLine("Volando");
-        }
-
     }
 
-    public class PatoPelirrojo : Pato, IVolar, IGraznar
+    public class PatoPelirrojo : Pato
     {
+
+        public PatoPelirrojo() :
+               base(new GraznarComoUnPato(), new VolarConAlas())
+        {
+        }
+
         public override void Mostrar()
         {
             Console.WriteLine("Soy un pato pelirrojo");
         }
-
-        public virtual void Graznar()
-        {
-            Console.WriteLine("¡Cuac, cuac!");
-        }
-        public virtual void Volar()
-        {
-            Console.WriteLine("Volando");
-        }
-
+        
     }
 
-    public class PatoDeJuguete : Pato, IGraznar
+    public class PatoDeJuguete : Pato
     {
-        public void Graznar()
+        public PatoDeJuguete() : 
+                base(new GraznarComoUnaBocina(), new NoVolar())
         {
-            Console.WriteLine("¡Meec, meec!");
         }
 
 
@@ -90,6 +78,13 @@ namespace PatronEstrategia
 
     public class PatoDecorativo : Pato
     {
+        public PatoDecorativo() :
+            base(new GraznarEnSilencio(), new NoVolar())
+        {
+        
+        }
+
+
         public override void Mostrar()
         {
             Console.WriteLine("Soy un pato decorativo");
