@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EjemploRealSolucion1.cs" />
+    <Compile Include="EjemploRealSolucionConPatron.cs" />
     <Compile Include="Interfaces.cs" />
     <Compile Include="Pato.cs" />
     <Compile Include="Program.cs" />
